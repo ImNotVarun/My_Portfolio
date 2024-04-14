@@ -26,3 +26,18 @@ document.addEventListener('DOMContentLoaded', function () {
     const firstLink = navLinks[0];
     updateActiveBar(firstLink);
 });
+
+
+
+// Get the circle element
+const circle = document.querySelector('#circle');
+
+// Add an event listener for scroll
+window.addEventListener('scroll', function () {
+    // If the page is scrolled down, hide the circle
+    if (window.pageYOffset > 0) {
+        circle.style.display = 'none';
+    } else { // If the page is at the top, show the circle
+        circle.style.display = 'block';
+    }
+});
