@@ -30,7 +30,7 @@ header {
     text-align: center;
     position: sticky;
     top: 0;
-    z-index: 1;
+    z-index: 99;
     animation: navAnimation 1s ease-out;
     animation-delay: 0.2s;
     animation-fill-mode: both;
@@ -159,8 +159,9 @@ p {
     position: fixed;
     width: 30vw;
     height: 30vw;
-    left: 78vw;
+    left: 85vw;
     bottom: -15vw;
+    top: 200px;
     border-radius: 50%;
     background-color: #4B8A5A;
     z-index: -3;
@@ -192,7 +193,7 @@ p {
     }
 
     h2 {
-        font-size: 40px;
+        font-size: 2rem;
     }
 
     p {
@@ -219,10 +220,30 @@ p {
     }
 
     #circle {
-        width: 40vw;
-        height: 40vw;
+        width: 50vw;
+        height: 50vw;
         left: 70vw;
-        bottom: -20vw;
+        bottom: -25vw;
+    }
+
+    .content-section {
+        flex-direction: column;
+        align-items: center;
+        margin-left: 0;
+        margin-top: 50px;
+    }
+
+    .box-container,
+    .second-box-container {
+        margin: 30px 0;
+    }
+
+    .green-box,
+    .white-box,
+    .second-green-box,
+    .second-white-box {
+        width: 80vw;
+        max-width: 600px;
     }
 }
 
@@ -232,7 +253,7 @@ p {
     }
 
     h2 {
-        font-size: 30px;
+        font-size: 1.5rem;
     }
 
     p {
@@ -252,7 +273,169 @@ p {
     #circle {
         width: 70vw;
         height: 70vw;
-        left: 60vw;
-        bottom: -20vw;
+        left: 87vw;
+        bottom: -35vw;
     }
+
+    .content-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-left: 0;
+        margin-top: 30px;
+    }
+
+    .box-container,
+    .second-box-container {
+        height: 350px;
+        width: 300px;
+        margin: 20px 0;
+    }
+
+    .green-box {
+        width: 190px;
+        max-width: 330px;
+        height: 200px;
+        margin-left: 15px;
+    }
+
+    .second-green-box {
+        width: 190px;
+        max-width: 330px;
+        height: 200px;
+        margin-top: 20px;
+        margin-left: -34px;
+    }
+
+    .white-box {
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        width: 200px;
+        max-width: 200px;
+        height: 200px;
+    }
+
+    .second-white-box {
+        display: flex;
+        justify-content: left;
+        width: 200px;
+        max-width: 200px;
+        height: 200px;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+    }
+
+    .box-container .white-box .content h3,
+    .box-container .white-box .content p,
+    .second-box-container .second-white-box .content h3,
+    .second-box-container .second-white-box .content p {
+        text-align: center;
+        font-size: 15px;
+        z-index: 5;
+
+    }
+}
+
+.content-section {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 90px;
+    cursor: pointer;
+}
+
+.box-container {
+    position: relative;
+
+}
+
+.green-box {
+    height: 350px;
+    width: 640px;
+    background-color: #4B8A5A;
+    border-radius: 40px;
+    position: relative;
+    z-index: 1;
+    transition: transform 0.3s ease;
+}
+
+.white-box {
+    position: absolute;
+    width: 550px;
+    border-radius: 20px;
+    top: 20px;
+    left: 20px;
+    background-color: white;
+    padding: 50px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    z-index: 2;
+    margin-top: 30px;
+    margin-left: -5px;
+    transition: transform 0.3s ease;
+}
+
+.box-container:hover .green-box {
+    transform: translateY(-10px);
+}
+
+.box-container:hover .white-box {
+    transform: translateY(10px);
+}
+
+.second-box-container {
+    position: relative;
+    margin-left: 50px;
+}
+
+.second-green-box {
+    height: 300px;
+    width: 500px;
+    background-color: #4B8A5A;
+    border-radius: 40px;
+    position: relative;
+    z-index: 1;
+    transition: transform 0.3s ease;
+}
+
+.second-white-box {
+    position: absolute;
+    width: 400px;
+    border-radius: 20px;
+    top: 20px;
+    left: 20px;
+    background-color: white;
+    padding: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    z-index: 2;
+    margin-top: 30px;
+    margin-left: -30px;
+    transition: transform 0.3s ease;
+}
+
+.second-box-container:hover .second-green-box {
+    transform: translateY(-10px);
+}
+
+.second-box-container:hover .second-white-box {
+    transform: translateY(10px);
+}
+
+.content {
+    text-align: left;
+}
+
+.content h3 {
+    font-family: 'Merienda', cursive;
+    font-size: 2rem;
+    color: #4B8A5A;
+    margin-bottom: 10px;
+}
+
+.content p {
+    max-width: 600px;
+    font-size: 18px;
+    line-height: 1.5;
+    color: #1E2A33;
 }
